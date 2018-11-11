@@ -1,0 +1,3 @@
+rootProject.name = 'RNBiDirectionalAddDemo'
+
+include ':app'
