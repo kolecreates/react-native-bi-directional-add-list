@@ -24,7 +24,7 @@ export default class CustomListItem extends PureComponent {
 
 const styles = StyleSheet.create({
   container: {
-    //padding: 5,
+    padding: 5,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
