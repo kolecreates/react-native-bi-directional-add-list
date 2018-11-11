@@ -4,7 +4,6 @@ import {StyleSheet, Text, View} from 'react-native';
 export default class CustomListItem extends PureComponent {
   constructor(props){
     super(props);
-    this.badgeColor = BADGE_COLORS[Math.floor(Math.random()*BADGE_COLORS.length)];
   }
 
   render(){
@@ -12,7 +11,7 @@ export default class CustomListItem extends PureComponent {
 
     return (
       <View style={[styles.container, {height: item.height}]}>
-        <View style={[styles.badge, {backgroundColor: this.badgeColor}]}>
+        <View style={[styles.badge, {backgroundColor: item.color}]}>
           <Text style={styles.badgeText}>{index}</Text>
         </View>
         <View style={styles.info}>
@@ -23,8 +22,6 @@ export default class CustomListItem extends PureComponent {
   }
 }
 
-const BADGE_COLORS = ["#4527A0", "#283593", "#1565C0", "#0277BD", "#00838F",
-"#00695C", "#2E7D32", "#FFEB3B", "#EF6C00", "#4E342E", "#424242", "#C62828"];
 const styles = StyleSheet.create({
   container: {
     //padding: 5,

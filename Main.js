@@ -25,9 +25,10 @@ export default class Main extends Component {
   }
 
   createItem(){
-    let key = this.nextKey;
-    this.nextKey++;
-    return {number: (Math.random()*1000).toFixed(2), key, height: ITEM_HEIGHTS[Math.floor(Math.random()*ITEM_HEIGHTS.length)]};
+    let key = this.nextKey; this.nextKey++;
+    let color = ITEM_COLORS[Math.floor(Math.random()*ITEM_COLORS.length)];
+    let height = ITEM_HEIGHTS[Math.floor(Math.random()*ITEM_HEIGHTS.length)];
+    return {key, height, color};
   }
 
   loadMoreBelow(amount=5){
@@ -86,6 +87,9 @@ export default class Main extends Component {
     );
   }
 }
+
+const ITEM_COLORS = ["#4527A0", "#283593", "#1565C0", "#0277BD", "#00838F",
+"#00695C", "#2E7D32", "#FFEB3B", "#EF6C00", "#4E342E", "#424242", "#C62828"];
 const ITEM_HEIGHTS = [50, 75, 100, 125, 150];
 const styles = StyleSheet.create({
   container: {
