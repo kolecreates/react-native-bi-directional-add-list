@@ -36,9 +36,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#555',
     alignItems: 'center',
     justifyContent: 'center',
-    borderTopLeftRadius: 10,
-    borderBottomLeftRadius: 10,
-    opacity: .81
+    borderTopLeftRadius: 5,
+    borderBottomLeftRadius: 5,
+    opacity: .81,
   },
   badgeText: {
     fontSize: 18,
@@ -50,11 +50,10 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
     justifyContent: 'flex-start',
-    backgroundColor: '#F5F5F5',
-    elevation: 2,
+    backgroundColor: '#F1F1F1',
   },
   infoText: {
     fontSize: 20,

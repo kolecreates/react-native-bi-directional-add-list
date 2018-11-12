@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   toolbar: {
     width: '100%',
     height: '10%',
-    backgroundColor: '#0D47A1',
+    backgroundColor: '#FFF',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around'
@@ -114,10 +114,12 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    elevation: 1,
   },
   toolbarButtonText: {
-    color: '#0D47A1',
-    fontSize: 16
+    color: '#000',
+    fontSize: 16,
+    opacity: .81
   }
 });
