@@ -15,6 +15,7 @@ export default class Main extends Component {
       items: [],
     };
     this.loadMoreBelow = this.loadMoreBelow.bind(this);
+    this.loadMoreAbove = this.loadMoreAbove.bind(this);
     this.addToTop = this.addToTop.bind(this);
     this.addToBottom = this.addToBottom.bind(this);
     this.nextKey = 0;
@@ -32,19 +33,19 @@ export default class Main extends Component {
   }
 
   loadMoreBelow(amount=5){
-    let newItems = [];
+    let items = this.state.items
     for(let i = 0; i < amount; i++){
-      newItems.push(this.createItem());
+      items.push(this.createItem());
     }
-    this.setState({items: this.state.items.concat(newItems)});
+    this.setState({items});
   }
 
   loadMoreAbove(amount=5){
-    let newItems = [];
+    let items = this.state.items;
     for(let i = 0; i < amount; i++){
-      newItems.push(this.createItem());
+      items.unshift(this.createItem());
     }
-    this.setState({items: newItems.concat(this.state.items)});
+    this.setState({items});
   }
 
   addToTop(){
@@ -76,7 +77,7 @@ export default class Main extends Component {
           initialNumToRender={8}
           scrollEventThrottle={16}/>
         <View style={styles.toolbar}>
-          <TouchableOpacity style={styles.toolbarButton} onPress={this.addToTop}>
+          <TouchableOpacity style={styles.toolbarButton} onPress={()=> this.loadMoreAbove(5)}>
             <Text style={styles.toolbarButtonText}>Add Top</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.toolbarButton} onPress={this.addToBottom}>
