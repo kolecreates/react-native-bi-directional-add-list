@@ -18,6 +18,7 @@ export default class Main extends Component {
     this.loadMoreAbove = this.loadMoreAbove.bind(this);
     this.addToTop = this.addToTop.bind(this);
     this.addToBottom = this.addToBottom.bind(this);
+    this.getNumberAddedToTop = this.getNumberAddedToTop.bind(this);
     this.nextKey = 0;
   }
 
@@ -45,12 +46,14 @@ export default class Main extends Component {
     for(let i = 0; i < amount; i++){
       items.unshift(this.createItem());
     }
+    this.numberAddedToTop = amount;
     this.setState({items});
   }
 
   addToTop(){
     let items = this.state.items;
     items.unshift(this.createItem());
+    this.numberAddedToTop = 1;
     this.setState({items});
   }
 
@@ -58,6 +61,12 @@ export default class Main extends Component {
     let items = this.state.items;
     items.push(this.createItem());
     this.setState({items});
+  }
+
+  getNumberAddedToTop(){
+    let n = this.numberAddedToTop || 0;
+    this.numberAddedToTop = 0;
+    return n;
   }
 
 
