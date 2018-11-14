@@ -23,7 +23,7 @@ export default class Main extends Component {
   }
 
   componentDidMount(){
-    //this.loadMoreBelow(10);
+    this.loadMoreBelow(50);
   }
 
   createItem(){
@@ -77,16 +77,17 @@ export default class Main extends Component {
           style={{flex: 1}}
           contentContainerStyle={styles.list}
           keyExtractor={(item, index)=> item.key}
-          data={this.state.items.concat([])}
+          data={this.state.items}
           renderItem={(data)=> <CustomListItem data={data}/>}
           onEndReached={this.loadMoreBelow}
           minScrollPositionToMaintain={0}
           maxToRenderPerBatch={20}
           updateCellsBatchingPeriod={25}
           initialNumToRender={8}
-          scrollEventThrottle={16}/>
+          scrollEventThrottle={16}
+          getNumberAddedToTop={this.getNumberAddedToTop}/>
         <View style={styles.toolbar}>
-          <TouchableOpacity style={styles.toolbarButton} onPress={()=> this.loadMoreAbove(5)}>
+          <TouchableOpacity style={styles.toolbarButton} onPress={()=> this.loadMoreAbove(2)}>
             <Text style={styles.toolbarButtonText}>Add Top</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.toolbarButton} onPress={this.addToBottom}>
